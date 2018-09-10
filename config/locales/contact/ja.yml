@@ -1,0 +1,19 @@
+ja:
+  contact:
+    inquiry:
+      title:        'コンタクト・質問ページ'
+      inquiry_name: 'お名前[必須]'
+      inquiry_email: 'メールアドレス[必須]'
+      inquiry_message: 'お問い合わせ内容[必須]'
+      validation_message: '入力内容にエラーがあります'
+      confirm_label: '確認'
+    confirm:
+      title:        '記入内容確認ページ'
+      inquiry_name: 'お名前'
+      inquiry_email: 'メールアドレス'
+      inquiry_message: 'お問い合わせ内容'
+      send_label:       '送信'
+      back_label:       '戻る'      
+    finish:
+      title:    'メッセージは正常に送信されました'
+

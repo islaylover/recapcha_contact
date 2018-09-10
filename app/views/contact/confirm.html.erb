@@ -1,0 +1,45 @@
+<script>
+function back_to(){
+ $("#send_inquiry").attr("action", "/inquiry");
+ $("#send_inquiry").submit();
+}
+</script>
+    <%= stylesheet_link_tag 'social-share-button' %>
+    <%= javascript_include_tag 'social-share-button' %>
+
+    <section id="main">
+        <section class="content">
+            <h3 class="heading"><%= t('.title') %></h3>
+            <article>
+<%= form_tag({action: :finish}, method: :post, id: 'send_inquiry', remote: false) do  %>
+  <table style="border-spacing: 20px;">
+    <tr>
+      <th><%= t('.inquiry_name') %></th>
+      <td>
+        <%= hidden_field_tag :name, @inquiry.name %>
+        <%= @inquiry.name %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= t('.inquiry_email') %></th>
+      <td>
+        <%= hidden_field_tag :email, @inquiry.email %>
+        <%= @inquiry.email %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= t('.inquiry_message') %></th>
+      <td>
+        <%= hidden_field_tag :message, @inquiry.message %>
+        <%= simple_format(@inquiry.message) %>
+      </td>
+    </tr>
+  </table>
+  <% #戻るボタン %>
+  <%= button_tag type: 'button', onclick: "back_to()" do %><%= t('.back_label') %><% end %>
+  <% #送信ボタン %>
+  <%= submit_tag t('.send_label'),  id: 'send_button', style: 'display: table-cell' %>
+<% end %>
+            </article>
+        </section>
+    </section>

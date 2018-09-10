@@ -1,0 +1,18 @@
+en:
+  contact:
+    inquiry:
+      title:        'Contact/Inquiry Page'
+      inquiry_name: 'Your Name'
+      inquiry_email: 'Your Email Address'
+      inquiry_message: 'Inquiy'
+      validation_message: 'There are some error in some fields'
+      confirm_label: 'Confirm'
+    confirm:
+      title:        'Comfirm Page'
+      inquiry_name: 'Your Name'
+      inquiry_email: 'Your Email Address'
+      inquiry_message: 'Your Inquiy'
+      send_label:      'Send'
+      back_label:      'Back'
+    finish:
+      title:    'Your message has been successfully sent.'

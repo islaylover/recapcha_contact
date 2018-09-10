@@ -1,0 +1,46 @@
+
+    <section id="main">
+        <section class="content">
+            <h3 class="heading"><%= t('.title') %></h3>
+            <article>
+<%= form_tag({action: :confirm}, method: :post, name:"inquiry", remote: false) do %>
+  <% if @inquiry.errors.any? %>
+      <strong><%= t('.validation_message') %></strong>
+      <ul>
+        <% @inquiry.errors.each do |attr, msg| %>
+        <% Rails.logger.debug attr.inspect %>
+          <li><%= t(attr) %> <%= t(msg) %></li>
+        <% end %>
+      </ul>
+  <% end %>
+
+  <table style="border-spacing: 20px;">
+    <tr>
+      <td><%= t('.inquiry_name') %></td>
+      <td>
+      <%= text_field_tag :name, '', size: 30, value: @inquiry.name, style: 'display: table-cell' %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" height="10"></td></tr>
+    <tr>
+      <td><%= t('.inquiry_email') %></td>
+      <td>
+      <%= text_field_tag :email, '', size: 30, value: @inquiry.email, style: 'display: table-cell' %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" height="10"></td></tr>
+    <tr>
+      <td style="vertical-align:top;"><%= t('.inquiry_message') %></td>
+      <td><%= text_area_tag :message, @inquiry.message, size: "30x6" %></td>
+    </tr>
+  </table>
+  <%= raw recaptcha_tags %>
+  <% #確認ボタン %>
+  <%= submit_tag t('.confirm_label'),  id: 'search_button', style: 'display: table-cell' %>
+<% end %>
+            </article>
+        </section>
+    </section>
+

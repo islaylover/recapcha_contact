@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= @user.name %>様からWebサイトからお問い合わせがありました。</h1>
+      <p>
+      mail:<%= @user.email %>
+      <br />
+      <br />
+      message:<%= simple_format(@user.message) %>
+    </p>
+  </body>
+</html>
