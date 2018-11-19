@@ -40,7 +40,7 @@ GoogleのreCAPTCHA[https://www.google.com/recaptcha/intro/v3beta.html]のアカ�
 http://tango-ruby.hatenablog.com/entry/2016/01/21/191706
 https://qiita.com/amagasu1234/items/9760c2c410776fd02e12
 
-1 credentials.yml.encにreCAPCHAのキーの登録====
+## 1 credentials.yml.encにreCAPCHAのキーの登録
 ```
 1:applicationのパスに移動
 [root@xxx-N-vm:/home/oreore]#cd /var/www/contactmail 
@@ -58,13 +58,14 @@ irb(main):001:0> Rails.application.credentials.RECAPTCHA_SECRET_KEY
 https://qiita.com/NaokiIshimura/items/2a179f2ab910992c4d39
 ```
 
-2 ambethia/recaptcha のGemを入れる====
+## 2 ambethia/recaptcha のGemを入れる
+```
 [root@xxx-N-vm:/var/www/contactmail]#vi Gemfile
 gem "recaptcha", require: "recaptcha/rails" <-- 追記
 [root@xxx-N-vm:/var/www/contactmail]#bundle install
+```
 
-
-====イニシャルファイルにreCAPCHAのキーの設定を記述====
+## 3 イニシャルファイルにreCAPCHAのキーの設定を記述
 ```
 [root@xxx-N-vm:/var/www/contactmail]#vi config/initializers/recaptcha.rb
 
@@ -80,7 +81,7 @@ end
 http://tango-ruby.hatenablog.com/entry/2016/01/21/191706
 
 
-3 action mailer
+## 4 action mailer
 自動生成コマンド実行
 ```
 [root@xxx-N-vm:/var/www/contactmail]#bin/rails generate mailer GuestMailer
