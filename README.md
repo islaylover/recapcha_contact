@@ -28,10 +28,12 @@ Google Compute Engine では、ポート 25 での送信接続は許可されま
 ```
 参照　：　https://cloud.google.com/compute/docs/tutorials/sending-mail/?hl=ja
 ※「SendGrid に登録し、postfixの設定を変えて今回は対応した。
+
 手順参考サイト：　https://www.apps-gcp.com/sendgrid-gce/#3sendmail
+```
 GCEの自分のサーバ上で下記コマンドで実際にメールが飛ぶか確認 ※メールアドレスは自分の環境に合わせる
 [root@xxx-N-vm:/home/oreore]#printf 'Subject: test\r\n\r\npassed' | sendmail hello@abc.com
-
+```
 
 ## 前準備2 GoogleのreCAPTCHAのアカウント登録・キーの登録
 GoogleのreCAPTCHA[https://www.google.com/recaptcha/intro/v3beta.html]のアカウント、登録し、サイトキーとセキュリティーキーを取得しておく
